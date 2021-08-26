@@ -1,7 +1,6 @@
 const Multiple = require("./Multiple");
 
 describe("check if number is multiple of 3 or 5", () => {
-
 	test("if the number is multiple of 3", () => {
 		const expectedValue = true;
 		const multiple = 3;
@@ -72,15 +71,55 @@ describe("check if number is multiple of 3 or 5", () => {
 		expect(expectedValue).toEqual(result);
 	});
 
-	test("sum all natural numbers multiple of (3 or 5) and 7", () => {
+	test("if the sum of numbers multiple of (3 or 5) and 7 below 36 is 56", () => {
 		const expectedValue = 56;
 		const multiples = [3, 5];
 		const multiples2 = [7];
 		const checkNumber = new Multiple();
 
-		const result = checkNumber.sumOfMultipleOfMultiplesAndMultiple(36, multiples, multiples2);
+		const result = checkNumber.sumOfMultipleOfMultiplesAndMultiple(
+			36,
+			multiples,
+			multiples2
+		);
 
 		expect(expectedValue).toEqual(result);
-	})
-	
+	});
+});
+
+describe("confirm results for the questions", () => {
+	test("if the result of the sum of multiples by 3 or 5 below 1000 is 233168", () => {
+		const expectedValue = 233168;
+		const multiples = [3, 5];
+		const checkNumber = new Multiple();
+
+		const result = checkNumber.sumOfMultipleOfNumber(1000, multiples);
+
+		expect(expectedValue).toEqual(result);
+	});
+
+	test("if the result of the sum of multiples by 3 and 5 below 1000 is 33165", () => {
+		const expectedValue = 33165;
+		const multiples = [3, 5];
+		const checkNumber = new Multiple();
+
+		const result = checkNumber.sumOfMultipleOfMultiples(1000, multiples);
+
+		expect(expectedValue).toEqual(result);
+	});
+
+	test("if the result of the sum of multiples by (3 or 5) and 7 is 33173", () => {
+		const expectedValue = 33173;
+		const multiples = [3, 5];
+		const multiples2 = [7];
+		const checkNumber = new Multiple();
+
+		const result = checkNumber.sumOfMultipleOfMultiplesAndMultiple(
+			1000,
+			multiples,
+			multiples2
+		);
+
+		expect(expectedValue).toEqual(result);
+	});
 });
